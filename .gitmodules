@@ -1,3 +1,0 @@
-[submodule "external/TCP_Server_Library"]
-	path = external/TCP_Server_Library
-	url = https://github.com/blAs1N/TCP_Server_Library.git
