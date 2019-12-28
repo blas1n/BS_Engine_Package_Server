@@ -15,7 +15,7 @@ set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build/${FOLDER_NAM
 
 add_subdirectory (external)
 
-set (LIBRARY_PATH ${CMAKE_CURRENT_LIST_DIR}/external/TCP_Server_Library/server)
+set (LIBRARY_PATH ${CMAKE_CURRENT_LIST_DIR}/external/Serv_Work/server)
 include_directories (${LIBRARY_PATH}/base_library)
 include_directories (${LIBRARY_PATH}/TCP)
 
