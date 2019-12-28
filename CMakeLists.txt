@@ -1,10 +1,6 @@
 cmake_minimum_required (VERSION 3.8)
 
-project (TCP_Server VERSION 1.0.0 LANGUAGES CXX)
-
-list (APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
-include (platform)
-include (util)
+project (BS_Engine_Package_Server VERSION 0.0.1 LANGUAGES CXX)
 
 set (CMAKE_CXX_STANDARD 17)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -17,10 +13,10 @@ set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build/${FOLDER_NAM
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build/${FOLDER_NAME}/lib)
 set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/build/${FOLDER_NAME}/lib)
 
-if (CMAKE_SYSTEM_NAME MATCHES "Linux")
-	find_package (Threads REQUIRED)
-endif ()
+add_subdirectory (external)
 
-set_property (GLOBAL PROPERTY USE_FOLDERS ON)
+set (LIBRARY_PATH ${CMAKE_CURRENT_LIST_DIR}/external/TCP_Server_Library/server)
+include_directories (${LIBRARY_PATH}/base_library)
+include_directories (${LIBRARY_PATH}/TCP)
 
 add_subdirectory (server)

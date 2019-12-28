@@ -1,2 +1,1 @@
-add_subdirectory (base_library)
-add_subdirectory (TCP)
+add_executable (Server main.cpp)
