@@ -70,6 +70,7 @@ void OnAccept(ServWork::Socket socket)
 			int len = socket.Recv(buf);
 			out << buf;
 			if (len < 1) break;
+			buf.Init();
 		}
 	}
 }
